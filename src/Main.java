@@ -1,5 +1,4 @@
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +16,6 @@ public class Main {
         System.out.println(guest2.getName() + " " + guest2.getSurname() + " (" + guest2.getDateOfBirth() + ")");
 
         Room room1 = new Room(1, 1, true, true, 1000.0);
-        Room room2 = new Room(2, 1, true, true, 1000.0);
         Room room3 = new Room(3, 3, false, true, 2400.0);
 
         Booking booking1 = new Booking(room1, LocalDate.of(2021,7,19) , LocalDate.of(2021,7,26));
@@ -29,8 +27,17 @@ public class Main {
 
 
         BookingManager bookingManager = new BookingManager();
-        bookingManager.getBookings().add(booking1);
-        bookingManager.getBookings().add(booking2);
+        bookingManager.addBooking(booking1);
+        bookingManager.addBooking(booking2);
+
+        bookingManager.getBooking(1);
+        bookingManager.getBookings();
+        bookingManager.clearBookings();
+        bookingManager.getNumberOfWorkingBookings();
+        bookingManager.getAverageGuests();
+        bookingManager.getNumberOfWorkingBookings();
+        bookingManager.printGuestStatistics();
+
         System.out.println("Rezervace: " + bookingManager.BookingsInfo());
     }
 }

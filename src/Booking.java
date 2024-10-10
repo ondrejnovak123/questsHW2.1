@@ -7,7 +7,7 @@ public class Booking {
     private Room room;
     private LocalDate dateFrom;
     private LocalDate dateTo;
-    private Integer typeOfVacation;
+    private Integer typeOfVacation; // 0 - osobni, 1 - pracovni
 
     public Booking(Room room, LocalDate dateFrom, LocalDate dateTo) {
 
